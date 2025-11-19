@@ -1,0 +1,124 @@
+---
+---
+
+<section class="py-24 bg-white relative">
+  <!-- Decorative background -->
+  <div class="absolute inset-0 opacity-5">
+    <svg class="w-full h-full" viewBox="0 0 1200 600">
+      <g stroke="#1a3a52" stroke-width="1" fill="none">
+        <path d="M 0 300 Q 300 150, 600 300 T 1200 300" opacity="0.3" />
+        <path d="M 0 320 Q 300 170, 600 320 T 1200 320" opacity="0.2" />
+      </g>
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-20">
+      <p class="text-[#d4af7d] text-sm font-semibold mb-4 tracking-widest uppercase">Trusted by Leaders</p>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[#1a3a52] mb-8">
+        Why Leaders Choose the Octave Diagnostic
+      </h2>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      {[
+        {
+          quote: "The Octave Diagnostic revealed blind spots in our leadership we didn't know existed—and gave us a clear roadmap to fix them.",
+          author: "Sarah Chen",
+          title: "Chief Executive Officer",
+          company: "Tech Innovation Corp",
+          rating: 5
+        },
+        {
+          quote: "We used these insights to redesign our entire leadership structure. Results spoke for themselves—30% increase in team engagement.",
+          author: "Marcus Johnson",
+          title: "VP of Operations",
+          company: "Fortune 500 Services",
+          rating: 5
+        },
+        {
+          quote: "This diagnostic tool gave our executive team the language and framework we needed to have honest conversations about improvement.",
+          author: "Jennifer Park",
+          title: "Founder & Chief Operating Officer",
+          company: "Growth Strategy Partners",
+          rating: 5
+        },
+        {
+          quote: "Every leader in our organization took it. The 1-page report is remarkably clear and actually actionable—we saw quick wins immediately.",
+          author: "David Rodriguez",
+          title: "Managing Director",
+          company: "Executive Leadership Group",
+          rating: 5
+        },
+        {
+          quote: "The 8-pillar framework transformed how we think about leadership gaps. No more guessing—now we have data.",
+          author: "Lisa Thompson",
+          title: "Chief Human Resources Officer",
+          company: "Global Solutions Inc",
+          rating: 5
+        },
+        {
+          quote: "We've recommended this to other leaders in our network. It's the most practical leadership assessment we've encountered.",
+          author: "Robert Williams",
+          title: "Senior Partner",
+          company: "Leadership Advisory",
+          rating: 5
+        }
+      ].map((testimonial) => (
+        <div class="group relative bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border-2 border-gray-100 hover:border-[#d4af7d] shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#d4af7d]/0 to-[#d4af7d]/0 group-hover:from-[#d4af7d]/5 group-hover:to-[#d4af7d]/3 transition-all duration-300"></div>
+
+          <div class="relative z-10">
+            <!-- Stars -->
+            <div class="flex gap-1 mb-6">
+              {[...Array(testimonial.rating)].map(() => (
+                <span class="text-[#d4af7d] text-xl">★</span>
+              ))}
+            </div>
+
+            <!-- Quote -->
+            <p class="text-gray-800 text-lg leading-relaxed mb-6 italic">
+              "{testimonial.quote}"
+            </p>
+
+            <!-- Author -->
+            <div class="border-t-2 border-gray-100 pt-6">
+              <p class="font-bold text-[#1a3a52] text-lg group-hover:text-[#d4af7d] transition-colors">
+                {testimonial.author}
+              </p>
+              <p class="text-[#d4af7d] font-semibold text-sm mb-1">
+                {testimonial.title}
+              </p>
+              <p class="text-gray-600 text-sm">
+                {testimonial.company}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Trusted Organizations Strip -->
+    <div class="py-16">
+      <p class="text-center text-gray-600 text-sm font-semibold mb-12 uppercase tracking-widest">Trusted by Leaders From</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 items-center justify-items-center">
+        {[
+          "Fortune 500",
+          "Tech Leaders",
+          "Enterprise",
+          "Services",
+          "Global"
+        ].map((org) => (
+          <div class="w-full h-20 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-50 rounded-xl border-2 border-gray-200 hover:border-[#d4af7d] transition-all duration-300 group/logo">
+            <div class="text-center">
+              <p class="font-bold text-[#1a3a52] group-hover/logo:text-[#d4af7d] transition-colors text-sm">
+                {org}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

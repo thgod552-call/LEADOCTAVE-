@@ -10,74 +10,108 @@ const links: NavLink[] = [
   { label: 'Model', href: '/model' },
   { label: 'Founder', href: '/founder' },
   { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
 ---
 
-<nav class="fixed top-0 w-full bg-gradient-to-b from-[#0f1a27]/95 to-[#0f1a27]/80 backdrop-blur-lg z-50 border-b border-[#d4af7d]/10 transition-all duration-300">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+<nav class="fixed top-0 w-full bg-gradient-to-b from-[#0f1a27] via-[#0f1a27]/95 to-[#0f1a27]/90 z-50 shadow-2xl backdrop-blur-lg border-b border-[#d4af7d]/20" style="box-shadow: 0 8px 32px rgba(212, 175, 125, 0.15);">
+  <div class="max-w-7xl mx-auto px-6 py-3.5 flex items-center justify-between">
     <!-- Logo -->
-    <a href="/" class="flex items-center space-x-2 font-bold text-xl hover:text-[#d4af7d] transition-colors group z-50">
-      <div class="w-8 h-8 rounded-full border-2 border-[#d4af7d] flex items-center justify-center group-hover:bg-[#d4af7d]/10 transition-colors">
-        <div class="w-4 h-4 rounded-full border border-[#d4af7d]"></div>
+    <a href="/" class="flex items-center space-x-2.5 z-50 group no-underline hover:opacity-90 transition-opacity duration-300">
+      <div class="relative w-10 h-10 flex items-center justify-center bg-gradient-to-br from-[#d4af7d] to-[#c49d6f] rounded-full shadow-lg group-hover:shadow-[#d4af7d]/50 transition-all duration-300">
+        <!-- Outer circle -->
+        <div class="absolute inset-1 rounded-full border-2 border-white/30 group-hover:border-white/60 transition-all duration-300"></div>
+        <!-- Inner octave-inspired design -->
+        <div class="relative w-6 h-6">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+            <circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5" opacity="0.8"/>
+            <circle cx="12" cy="12" r="6" stroke="white" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="12" cy="12" r="2" fill="white" opacity="1"/>
+          </svg>
+        </div>
       </div>
-      <span class="bg-gradient-to-r from-white to-[#d4af7d] bg-clip-text text-transparent">LeadOctave</span>
+      <div class="flex flex-col">
+        <span class="text-lg font-bold text-white tracking-tight group-hover:text-[#d4af7d] transition-colors duration-300">
+          LeadOctave
+        </span>
+        <span class="text-xs text-[#e0b890] tracking-widest uppercase font-semibold">Leadership Design</span>
+      </div>
     </a>
 
     <!-- Navigation Links - Desktop -->
-    <div class="hidden md:flex items-center space-x-8">
+    <div class="hidden md:flex items-center space-x-1">
       {
         links.map((link) => (
           <a
             href={link.href}
-            class="text-sm font-medium text-gray-300 hover:text-[#d4af7d] transition-all duration-300 relative group"
+            class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-[#d4af7d] transition-all duration-300 relative group rounded-lg hover:bg-[#d4af7d]/5"
           >
             {link.label}
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#d4af7d] to-[#c49d6f] group-hover:w-full transition-all duration-300"></span>
+            <span class="absolute bottom-1.5 left-4 right-4 h-0.5 bg-gradient-to-r from-[#d4af7d] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
           </a>
         ))
       }
     </div>
 
-    <!-- Hamburger Menu - Mobile -->
-    <button id="hamburger" class="md:hidden flex flex-col gap-1.5 cursor-pointer z-50 relative">
-      <span class="hamburger-line w-6 h-0.5 bg-white rounded transition-all duration-300"></span>
-      <span class="hamburger-line w-6 h-0.5 bg-white rounded transition-all duration-300"></span>
-      <span class="hamburger-line w-6 h-0.5 bg-white rounded transition-all duration-300"></span>
-    </button>
+    <!-- CTA Button + Mobile Menu Toggle -->
+    <div class="flex items-center space-x-4">
+      <a href="/contact" class="hidden md:inline-block px-6 py-2.5 bg-gradient-to-r from-[#d4af7d] to-[#c49d6f] hover:from-[#c49d6f] hover:to-[#b48a5f] text-black font-bold rounded-lg transition-all duration-300 text-sm shadow-lg hover:shadow-xl hover:shadow-[#d4af7d]/40 transform hover:scale-105 border border-[#e0b890]">
+        Diagnostic
+      </a>
+
+      <!-- Hamburger Menu - Mobile -->
+      <button id="hamburger" class="md:hidden flex flex-col gap-1.5 cursor-pointer z-50 relative p-2">
+        <span class="hamburger-line w-5 h-0.5 bg-[#d4af7d] rounded-full transition-all duration-300"></span>
+        <span class="hamburger-line w-5 h-0.5 bg-[#d4af7d] rounded-full transition-all duration-300"></span>
+        <span class="hamburger-line w-5 h-0.5 bg-[#d4af7d] rounded-full transition-all duration-300"></span>
+      </button>
+    </div>
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden fixed inset-0 top-20 bg-[#0f1a27]/95 backdrop-blur-lg border-t border-[#d4af7d]/10 z-40">
-    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col space-y-6">
+  <div id="mobile-menu" class="hidden md:hidden fixed inset-0 top-[68px] bg-gradient-to-b from-[#0f1a27] to-[#0f1a27]/95 backdrop-blur-lg border-t border-[#d4af7d]/10 z-40 overflow-y-auto">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col space-y-2">
       {
         links.map((link) => (
           <a
             href={link.href}
-            class="text-lg font-medium text-gray-300 hover:text-[#d4af7d] transition-colors py-2 border-b border-gray-800/50 hover:border-[#d4af7d]/30"
+            class="px-4 py-3 text-base font-medium text-gray-300 hover:text-[#d4af7d] hover:bg-[#d4af7d]/5 transition-all duration-300 rounded-lg border-l-2 border-transparent hover:border-[#d4af7d]/60"
           >
             {link.label}
           </a>
         ))
       }
+      <div class="pt-6 border-t border-[#d4af7d]/10">
+        <a href="/contact" class="block w-full px-4 py-3 bg-gradient-to-r from-[#d4af7d] to-[#c49d6f] hover:from-[#c49d6f] hover:to-[#b48a5f] text-black font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-[#d4af7d]/40 text-center">
+          Take Diagnostic
+        </a>
+      </div>
     </div>
   </div>
 </nav>
 
 <style>
   nav {
-    box-shadow: 0 4px 30px rgba(212, 175, 125, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
 
   #hamburger.active .hamburger-line:nth-child(1) {
-    transform: rotate(45deg) translate(8px, 8px);
+    transform: rotate(45deg) translate(10px, 10px);
+    background-color: #d4af7d;
   }
 
   #hamburger.active .hamburger-line:nth-child(2) {
     opacity: 0;
+    transform: translateX(-10px);
   }
 
   #hamburger.active .hamburger-line:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
+    transform: rotate(-45deg) translate(8px, -8px);
+    background-color: #d4af7d;
+  }
+
+  .hamburger-line {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 </style>
 
@@ -86,23 +120,37 @@ const links: NavLink[] = [
   const mobileMenu = document.getElementById('mobile-menu');
 
   if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
       hamburger.classList.toggle('active');
       mobileMenu.classList.toggle('hidden');
     });
 
     // Close menu when a link is clicked
-    const links = mobileMenu.querySelectorAll('a');
+    const links = mobileMenu.querySelectorAll('a, button');
     links.forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.add('hidden');
+      link.addEventListener('click', (e) => {
+        if (link.tagName === 'A') {
+          hamburger.classList.remove('active');
+          mobileMenu.classList.add('hidden');
+        }
       });
     });
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+      const isClickInsideMenu = mobileMenu.contains(e.target);
+      const isClickOnHamburger = hamburger.contains(e.target);
+      
+      if (!isClickInsideMenu && !isClickOnHamburger && !hamburger.classList.contains('hidden')) {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.add('hidden');
+      }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
         hamburger.classList.remove('active');
         mobileMenu.classList.add('hidden');
       }

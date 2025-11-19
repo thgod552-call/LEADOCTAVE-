@@ -1,0 +1,85 @@
+---
+---
+
+<section class="relative w-full h-screen flex items-center justify-center pt-20 overflow-hidden bg-black">
+  <!-- Background image with overlay -->
+  <div 
+    class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-black/40"
+    style="background-image: url('https://images.unsplash.com/photo-1516321497487-e288fb3ce48f?w=1600&h=900&fit=crop'); background-size: cover; background-position: center right;"
+  ></div>
+
+  <!-- Octave lines animation -->
+  <div class="absolute inset-0 opacity-10">
+    <svg class="w-full h-full" viewBox="0 0 1200 800">
+      <g stroke="#d4af7d" stroke-width="2" fill="none">
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+          <circle cx={150 + i * 130} cy="400" r={80 - i * 8} opacity={0.3 - i * 0.03} />
+        ))}
+      </g>
+    </svg>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6">
+    <div class="max-w-3xl">
+      <p class="text-[#d4af7d] text-sm font-semibold mb-4 tracking-widest animate-fade-in uppercase">
+        Meet the Founder
+      </p>
+
+      <h1 class="text-6xl md:text-7xl lg:text-8xl font-serif font-bold leading-tight mb-6 text-white animate-slide-up">
+        Joshua Tolofari
+      </h1>
+
+      <p class="text-2xl md:text-3xl font-serif text-[#e0b890] mb-4 animate-slide-up" style="animation-delay: 0.1s">
+        A Systems Thinker Who Builds Leaders
+      </p>
+
+      <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed animate-slide-up" style="animation-delay: 0.2s">
+        I help leaders move from chaos to cadence through structures of trust, clarity, and sustainable execution.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 animate-slide-up" style="animation-delay: 0.3s">
+        <button class="px-8 py-4 bg-[#d4af7d] hover:bg-[#e0b890] text-black font-bold rounded-lg transition-all duration-300 text-lg shadow-lg hover:shadow-[#d4af7d]/50 transform hover:scale-105">
+          Invite Joshua to Speak
+        </button>
+        <button class="px-8 py-4 border-2 border-[#d4af7d] hover:border-[#e0b890] text-[#d4af7d] hover:text-[#e0b890] font-bold rounded-lg transition-all duration-300 text-lg transform hover:scale-105">
+          Book a Clarity Session
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-[#d4af7d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out 0.2s both;
+  }
+</style>

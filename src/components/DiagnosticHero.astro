@@ -1,0 +1,94 @@
+---
+---
+
+<section class="relative w-full h-screen overflow-hidden flex items-center justify-center">
+  <!-- Background image with overlay -->
+  <div 
+    class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/80 to-black/75"
+    style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop'); background-size: cover; background-position: center;"
+  ></div>
+
+  <!-- Animated background pattern -->
+  <div class="absolute inset-0 opacity-20">
+    <svg class="w-full h-full" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="octaveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#d4af7d;stop-opacity:0.3" />
+          <stop offset="100%" style="stop-color:#1a3a52;stop-opacity:0.1" />
+        </linearGradient>
+      </defs>
+      <g stroke="url(#octaveGradient)" stroke-width="2" fill="none">
+        <circle cx="600" cy="300" r="300" opacity="0.3" />
+        <circle cx="600" cy="300" r="240" opacity="0.25" />
+        <circle cx="600" cy="300" r="180" opacity="0.2" />
+        <circle cx="600" cy="300" r="120" opacity="0.15" />
+        <circle cx="600" cy="300" r="60" opacity="0.1" />
+      </g>
+      <g stroke="#d4af7d" stroke-width="1" opacity="0.1">
+        <path d="M 0 300 Q 300 150, 600 300 T 1200 300" />
+        <path d="M 0 320 Q 300 170, 600 320 T 1200 320" />
+        <path d="M 0 280 Q 300 130, 600 280 T 1200 280" />
+      </g>
+    </svg>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-8">
+    <div class="space-y-6 animate-fade-in">
+      <p class="text-[#d4af7d] text-sm font-semibold tracking-widest uppercase">Diagnostic Assessment</p>
+      <h1 class="text-6xl md:text-7xl font-serif font-bold text-white leading-tight">
+        Start With Your<br />
+        <span class="bg-gradient-to-r from-[#d4af7d] to-[#e0b890] bg-clip-text text-transparent">
+          Octave Diagnostic
+        </span>
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+        Discover how your leadership measures across eight pillars and receive a clear roadmap to move from chaos to cadence.
+      </p>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="pt-8">
+      <a href="#diagnostic-form" class="inline-block px-12 py-5 bg-[#d4af7d] hover:bg-[#e0b890] text-black font-bold rounded-lg transition-all duration-300 text-lg shadow-2xl hover:shadow-[#d4af7d]/50 transform hover:scale-105 animate-pulse-soft">
+        Take the Diagnostic
+      </a>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-[#d4af7d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </div>
+
+  <style>
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse-soft {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 125, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 0 10px rgba(212, 175, 125, 0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fade-in 0.8s ease-out;
+    }
+
+    .animate-pulse-soft {
+      animation: pulse-soft 2s infinite;
+    }
+  </style>
+</section>

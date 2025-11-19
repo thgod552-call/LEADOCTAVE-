@@ -1,0 +1,68 @@
+---
+---
+
+<section class="relative w-full h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-b from-black to-[#0f1a27]">
+  <!-- Animated background elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-20 right-20 w-96 h-96 bg-[#d4af7d]/10 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-20 left-20 w-96 h-96 bg-[#d4af7d]/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+    <p class="text-[#d4af7d] text-sm font-semibold mb-4 tracking-widest animate-fade-in uppercase">
+      Services
+    </p>
+
+    <h1 class="text-6xl md:text-7xl lg:text-8xl font-serif font-bold leading-tight mb-6 text-white animate-slide-up">
+      How We Transform Leadership
+    </h1>
+
+    <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-12 leading-relaxed animate-slide-up" style="animation-delay: 0.1s">
+      Custom frameworks, team alignment, leadership training, and strategic speaking designed for your organization's unique challenges.
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style="animation-delay: 0.2s">
+      <button class="px-8 py-4 bg-[#d4af7d] hover:bg-[#e0b890] text-black font-bold rounded-lg transition-all duration-300 text-lg shadow-lg hover:shadow-[#d4af7d]/50 transform hover:scale-105">
+        Explore Our Services
+      </button>
+      <button class="px-8 py-4 border-2 border-[#d4af7d] hover:border-[#e0b890] text-[#d4af7d] hover:text-[#e0b890] font-bold rounded-lg transition-all duration-300 text-lg transform hover:scale-105">
+        Schedule a Consultation
+      </button>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-[#d4af7d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out 0.2s both;
+  }
+</style>

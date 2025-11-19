@@ -1,0 +1,137 @@
+---
+---
+
+<section class="py-24 bg-white relative">
+  <!-- Decorative background -->
+  <div class="absolute inset-0 opacity-5">
+    <svg class="w-full h-full" viewBox="0 0 1200 600">
+      <g stroke="#1a3a52" stroke-width="1" fill="none">
+        <circle cx="600" cy="300" r="300" />
+        <circle cx="600" cy="300" r="250" />
+        <circle cx="600" cy="300" r="200" />
+        <circle cx="600" cy="300" r="150" />
+      </g>
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-20">
+      <p class="text-[#d4af7d] text-sm font-semibold mb-4 tracking-widest uppercase">Trusted by Leaders</p>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[#1a3a52] mb-8">
+        Press & Media
+      </h2>
+      <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+        Featured insights and leadership conversations from industry-leading platforms and organizations.
+      </p>
+    </div>
+
+    <!-- Media/Press Items Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+      {[
+        {
+          type: "Featured Interview",
+          platform: "Forbes",
+          title: "How Systems Thinking Transforms Leadership",
+          quote: "The organizations we work with don't need more leaders. They need better systems.",
+          date: "2024"
+        },
+        {
+          type: "Keynote Speaker",
+          platform: "Chief Strategic Summit",
+          title: "Leadership System Design for Scaled Impact",
+          quote: "Leadership has rhythm. When you find that rhythm, everything changes.",
+          date: "2024"
+        },
+        {
+          type: "Industry Contributor",
+          platform: "Harvard Business Review",
+          title: "Building Leadership Systems That Last Beyond You",
+          quote: "Sustainable leadership isn't about personality—it's about systems.",
+          date: "2023"
+        },
+        {
+          type: "Speaking Engagement",
+          platform: "Fortune 500 Leadership Roundtable",
+          title: "Organizational Cadence & High-Performance Teams",
+          quote: "Aligned teams move faster, make better decisions, and stay together longer.",
+          date: "2023"
+        }
+      ].map((item) => (
+        <div class="group relative bg-gradient-to-br from-[#0f1a27] to-[#1a3a52] rounded-2xl overflow-hidden border-2 border-[#d4af7d]/30 hover:border-[#d4af7d] transition-all duration-300 hover:shadow-2xl hover:shadow-[#d4af7d]/20 transform hover:-translate-y-1">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#d4af7d]/0 to-[#d4af7d]/0 group-hover:from-[#d4af7d]/10 group-hover:to-[#d4af7d]/5 transition-all duration-300"></div>
+
+          <div class="p-8 relative z-10">
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-4 py-2 bg-[#d4af7d] text-black text-sm font-bold rounded-full">
+                {item.type}
+              </span>
+              <span class="text-[#d4af7d] text-sm font-semibold">
+                {item.date}
+              </span>
+            </div>
+
+            <div class="mb-4">
+              <p class="text-[#e0b890] font-semibold text-sm mb-2">{item.platform}</p>
+              <h3 class="text-2xl font-bold text-white group-hover:text-[#d4af7d] transition-colors">
+                {item.title}
+              </h3>
+            </div>
+
+            <blockquote class="relative pl-6 border-l-4 border-[#d4af7d] text-gray-200 italic">
+              "{item.quote}"
+            </blockquote>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Client Logo Strip -->
+    <div class="mb-20">
+      <p class="text-center text-gray-600 text-sm font-semibold mb-12 uppercase tracking-widest">Trusted by Organizations Like</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+        {[
+          { name: "Fortune 500", initials: "F500" },
+          { name: "Chief Strategic", initials: "CSO" },
+          { name: "Leadership Institute", initials: "LI" },
+          { name: "Global Leaders", initials: "GL" }
+        ].map((org) => (
+          <div class="w-full h-24 flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl border-2 border-gray-200 hover:border-[#d4af7d] transition-all duration-300 group/logo">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-[#1a3a52] mb-1 group-hover/logo:text-[#d4af7d] transition-colors">
+                {org.initials}
+              </div>
+              <p class="text-xs text-gray-600 group-hover/logo:text-[#1a3a52]">{org.name}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Additional Resources -->
+    <div class="bg-gradient-to-r from-[#1a3a52] to-[#0f1a27] rounded-2xl p-12 border-2 border-[#d4af7d]/30">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+        <div>
+          <p class="text-[#d4af7d] text-sm font-semibold mb-3 uppercase tracking-widest">Media Kit</p>
+          <p class="text-gray-300 mb-4">Professional headshots, bios, and speaking topics</p>
+          <button class="text-[#d4af7d] hover:text-[#e0b890] font-semibold underline transition-colors">
+            Download Media Kit →
+          </button>
+        </div>
+        <div>
+          <p class="text-[#d4af7d] text-sm font-semibold mb-3 uppercase tracking-widest">Speaking Topics</p>
+          <p class="text-gray-300 mb-4">Customizable keynotes and workshop formats</p>
+          <button class="text-[#d4af7d] hover:text-[#e0b890] font-semibold underline transition-colors">
+            View Speaking Options →
+          </button>
+        </div>
+        <div>
+          <p class="text-[#d4af7d] text-sm font-semibold mb-3 uppercase tracking-widest">Contact Joshua</p>
+          <p class="text-gray-300 mb-4">For speaking engagements and media inquiries</p>
+          <button class="text-[#d4af7d] hover:text-[#e0b890] font-semibold underline transition-colors">
+            Get in Touch →
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

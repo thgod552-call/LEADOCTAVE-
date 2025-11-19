@@ -1,0 +1,118 @@
+---
+---
+
+<section class="py-24 bg-gradient-to-br from-[#1a3a52] via-[#0f1a27] to-black relative overflow-hidden">
+  <!-- Decorative background -->
+  <div class="absolute inset-0 opacity-10">
+    <svg class="w-full h-full" viewBox="0 0 1200 600">
+      <g stroke="#d4af7d" stroke-width="2" fill="none">
+        <circle cx="600" cy="300" r="300" />
+        <circle cx="600" cy="300" r="250" />
+        <circle cx="600" cy="300" r="200" />
+        <circle cx="600" cy="300" r="150" />
+      </g>
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <!-- Left: Content -->
+      <div class="space-y-8">
+        <div>
+          <p class="text-[#d4af7d] text-sm font-semibold mb-4 tracking-widest uppercase">Meet Our Founder</p>
+          <h2 class="text-5xl md:text-6xl font-serif font-bold text-white leading-tight">
+            Joshua Tolofari
+          </h2>
+          <p class="text-[#e0b890] text-xl mt-4 font-semibold">
+            A Systems Thinker Who Builds Leaders
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Joshua has spent two decades transforming how organizations think about leadership. Rather than fixing leaders one at a time, he engineers <span class="text-[#d4af7d] font-semibold">systems that enable predictable excellence</span> at scale.
+          </p>
+
+          <p class="text-gray-300 text-lg leading-relaxed">
+            The Octave Model™ emerged from this insight: <span class="text-[#d4af7d] font-semibold">leadership has rhythm</span>. When you find that rhythm, teams align, decisions accelerate, and results compound.
+          </p>
+
+          <div class="bg-gradient-to-r from-[#d4af7d]/10 to-transparent border-l-4 border-[#d4af7d] pl-6 py-6">
+            <p class="text-[#e0b890] italic text-lg font-semibold">
+              "The organizations we work with don't need more leaders. They need better systems."
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/founder" class="px-8 py-4 bg-[#d4af7d] hover:bg-[#e0b890] text-black font-bold rounded-lg transition-all duration-300 text-center transform hover:scale-105 shadow-lg hover:shadow-[#d4af7d]/50">
+            Read Joshua's Full Story
+          </a>
+          <a href="/founder#speaking" class="px-8 py-4 bg-transparent border-2 border-[#d4af7d] hover:bg-[#d4af7d]/10 text-[#d4af7d] font-bold rounded-lg transition-all duration-300 text-center transform hover:scale-105">
+            Speaking Topics
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Stats & Philosophy -->
+      <div class="space-y-8">
+        <!-- Stats -->
+        <div class="grid grid-cols-2 gap-6">
+          <div class="bg-gradient-to-br from-[#d4af7d]/20 to-[#d4af7d]/5 rounded-xl p-8 border border-[#d4af7d]/30 hover:border-[#d4af7d] transition-all duration-300 group">
+            <p class="text-5xl font-bold text-[#d4af7d] group-hover:text-[#e0b890] transition-colors">20+</p>
+            <p class="text-gray-300 mt-2">Years in Leadership</p>
+          </div>
+          <div class="bg-gradient-to-br from-[#d4af7d]/20 to-[#d4af7d]/5 rounded-xl p-8 border border-[#d4af7d]/30 hover:border-[#d4af7d] transition-all duration-300 group">
+            <p class="text-5xl font-bold text-[#d4af7d] group-hover:text-[#e0b890] transition-colors">500+</p>
+            <p class="text-gray-300 mt-2">Leaders Transformed</p>
+          </div>
+          <div class="bg-gradient-to-br from-[#d4af7d]/20 to-[#d4af7d]/5 rounded-xl p-8 border border-[#d4af7d]/30 hover:border-[#d4af7d] transition-all duration-300 group">
+            <p class="text-5xl font-bold text-[#d4af7d] group-hover:text-[#e0b890] transition-colors">100+</p>
+            <p class="text-gray-300 mt-2">Organizations</p>
+          </div>
+          <div class="bg-gradient-to-br from-[#d4af7d]/20 to-[#d4af7d]/5 rounded-xl p-8 border border-[#d4af7d]/30 hover:border-[#d4af7d] transition-all duration-300 group">
+            <p class="text-5xl font-bold text-[#d4af7d] group-hover:text-[#e0b890] transition-colors">15+</p>
+            <p class="text-gray-300 mt-2">Speaking Topics</p>
+          </div>
+        </div>
+
+        <!-- Philosophy Cards -->
+        <div class="space-y-4">
+          <h3 class="text-2xl font-bold text-[#d4af7d] mb-6">Core Leadership Philosophy</h3>
+
+          {[
+            {
+              icon: "⚙️",
+              title: "Systems Over Personalities",
+              desc: "Build frameworks that outlast any individual"
+            },
+            {
+              icon: "🎯",
+              title: "Clarity Creates Execution",
+              desc: "Aligned teams move faster and stay together longer"
+            },
+            {
+              icon: "🌱",
+              title: "Sustainability Over Growth",
+              desc: "Build organizations that thrive beyond burnout"
+            }
+          ].map((item) => (
+            <div class="flex gap-4 p-4 rounded-lg bg-[#0f1a27]/50 border border-[#d4af7d]/20 hover:border-[#d4af7d]/50 transition-all duration-300 group">
+              <div class="text-3xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                {item.icon}
+              </div>
+              <div>
+                <p class="text-[#d4af7d] font-bold text-lg group-hover:text-[#e0b890] transition-colors">
+                  {item.title}
+                </p>
+                <p class="text-gray-400 text-sm">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,12 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceOfferings from '../components/ServiceOfferings.astro';
+import ServiceBenefits from '../components/ServiceBenefits.astro';
 ---
 
-<Layout title="Service - LeadOctave">
+<Layout title="Our Services - LeadOctave">
   <Navigation />
-  <div class="pt-32 pb-20 max-w-7xl mx-auto px-6 min-h-screen">
-    <h1 class="text-5xl font-serif font-bold mb-8">Our Services</h1>
-    <p class="text-xl text-gray-300">Coming soon...</p>
-  </div>
+  <ServiceHero />
+  <ServiceOfferings />
+  <ServiceBenefits />
 </Layout>

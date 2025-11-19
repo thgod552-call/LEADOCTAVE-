@@ -1,0 +1,173 @@
+---
+---
+
+<section id="diagnostic-form" class="py-24 bg-gradient-to-br from-[#0f1a27] to-black relative overflow-hidden">
+  <!-- Decorative background -->
+  <div class="absolute inset-0 opacity-10">
+    <svg class="w-full h-full" viewBox="0 0 1200 600">
+      <g stroke="#d4af7d" stroke-width="2" fill="none">
+        <path d="M 0 300 Q 300 150, 600 300 T 1200 300" opacity="0.3" />
+        <path d="M 0 320 Q 300 170, 600 320 T 1200 320" opacity="0.2" />
+        <path d="M 0 280 Q 300 130, 600 280 T 1200 280" opacity="0.2" />
+      </g>
+    </svg>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-16">
+      <p class="text-[#d4af7d] text-sm font-semibold mb-4 tracking-widest uppercase">Interactive Assessment</p>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-white mb-8">
+        Your Octave Diagnostic
+      </h2>
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+        24 questions designed to measure your leadership across 8 pillars. Takes approximately 10-15 minutes.
+      </p>
+    </div>
+
+    <!-- Main Form -->
+    <form class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-12 border-2 border-[#d4af7d]/30 space-y-12">
+      <!-- Contact Information Section -->
+      <div class="space-y-6">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-8 h-8 rounded-full bg-[#d4af7d] text-black font-bold flex items-center justify-center text-sm">
+            0
+          </div>
+          <h3 class="text-2xl font-bold text-[#d4af7d]">Your Information</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-gray-200 font-semibold mb-3">Full Name *</label>
+            <input type="text" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border-2 border-gray-600 hover:border-[#d4af7d] focus:border-[#d4af7d] focus:outline-none text-white placeholder-gray-400 transition-colors" placeholder="Joshua Tolofari" />
+          </div>
+          <div>
+            <label class="block text-gray-200 font-semibold mb-3">Email Address *</label>
+            <input type="email" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border-2 border-gray-600 hover:border-[#d4af7d] focus:border-[#d4af7d] focus:outline-none text-white placeholder-gray-400 transition-colors" placeholder="your@email.com" />
+          </div>
+          <div>
+            <label class="block text-gray-200 font-semibold mb-3">Organization / Company *</label>
+            <input type="text" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border-2 border-gray-600 hover:border-[#d4af7d] focus:border-[#d4af7d] focus:outline-none text-white placeholder-gray-400 transition-colors" placeholder="Your Organization" />
+          </div>
+          <div>
+            <label class="block text-gray-200 font-semibold mb-3">Role / Position *</label>
+            <input type="text" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border-2 border-gray-600 hover:border-[#d4af7d] focus:border-[#d4af7d] focus:outline-none text-white placeholder-gray-400 transition-colors" placeholder="CEO / Director / Manager" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Diagnostic Questions Section -->
+      {[
+        {
+          pillar: "Identity",
+          pillarNum: 1,
+          questions: [
+            "Do you clearly define your leadership vision and values?",
+            "Are your personal leadership principles aligned with organizational goals?",
+            "Do you communicate your vision consistently across the organization?"
+          ]
+        },
+        {
+          pillar: "Clarity",
+          pillarNum: 2,
+          questions: [
+            "Does every team member understand their role and outcomes?",
+            "Are strategic priorities clearly communicated and documented?",
+            "Do team members know how their work connects to organizational success?"
+          ]
+        },
+        {
+          pillar: "Trust",
+          pillarNum: 3,
+          questions: [
+            "Do your teams feel they can rely on you and each other?",
+            "Is there psychological safety within your team to voice concerns?",
+            "Do you follow through on commitments consistently?"
+          ]
+        },
+        {
+          pillar: "Rhythm",
+          pillarNum: 4,
+          questions: [
+            "Are your meetings, feedback, and workflows predictable?",
+            "Do you have consistent cadences for planning and review?",
+            "Are decision-making processes transparent and repeatable?"
+          ]
+        },
+        {
+          pillar: "Alignment",
+          pillarNum: 5,
+          questions: [
+            "Are team priorities synchronized with organizational goals?",
+            "Do individual objectives connect to the broader strategy?",
+            "Is there alignment between different departments and teams?"
+          ]
+        },
+        {
+          pillar: "Communication",
+          pillarNum: 6,
+          questions: [
+            "Is messaging clear, consistent, and structured?",
+            "Do team members understand the 'why' behind decisions?",
+            "Is there transparent communication about challenges and wins?"
+          ]
+        },
+        {
+          pillar: "Accountability",
+          pillarNum: 7,
+          questions: [
+            "Do you have systems that track responsibilities and follow-up?",
+            "Are consequences clear for both achievements and failures?",
+            "Is accountability shared, not hoarded at the top?"
+          ]
+        },
+        {
+          pillar: "Sustainability",
+          pillarNum: 8,
+          questions: [
+            "Can your leadership and culture endure changes or crises?",
+            "Are systems designed for longevity, not just short-term wins?",
+            "Is burnout being addressed systematically in your organization?"
+          ]
+        }
+      ].map((section) => (
+        <div class="space-y-6">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-8 h-8 rounded-full bg-[#d4af7d] text-black font-bold flex items-center justify-center text-sm">
+              {section.pillarNum}
+            </div>
+            <h3 class="text-2xl font-bold text-[#d4af7d]">{section.pillar}</h3>
+          </div>
+
+          {section.questions.map((question, idx) => (
+            <div class="bg-gray-800/50 rounded-lg p-6 border border-gray-700 hover:border-[#d4af7d]/50 transition-colors">
+              <p class="text-gray-200 font-semibold mb-4">
+                {idx + 1}. {question}
+              </p>
+              <div class="flex gap-4">
+                {["Yes", "Somewhat", "No"].map((option) => (
+                  <label class="flex items-center gap-2 cursor-pointer group">
+                    <input type="radio" name={`q_${section.pillarNum}_${idx}`} value={option} class="w-4 h-4 cursor-pointer accent-[#d4af7d]" />
+                    <span class="text-gray-300 group-hover:text-[#d4af7d] transition-colors">
+                      {option}
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      ))}
+
+      <!-- Microcopy & Submit -->
+      <div class="bg-[#d4af7d]/10 border-l-4 border-[#d4af7d] pl-6 py-6">
+        <p class="text-gray-300 italic">
+          ✓ Your responses are confidential. A personalized Octave Report will be emailed within 24 hours.
+        </p>
+      </div>
+
+      <button type="submit" class="w-full px-8 py-5 bg-gradient-to-r from-[#d4af7d] to-[#e0b890] hover:from-[#e0b890] hover:to-[#f0c5a0] text-black font-bold rounded-lg transition-all duration-300 text-lg shadow-xl transform hover:scale-105">
+        Submit & Get Your Report
+      </button>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,65 @@
+---
+---
+
+<section class="py-24 bg-gradient-to-r from-[#d4af7d] via-[#e0b890] to-[#d4af7d] relative overflow-hidden">
+  <!-- Animated harmonic lines background -->
+  <div class="absolute inset-0">
+    <svg class="w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="harmonicGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#1a3a52;stop-opacity:0.1" />
+          <stop offset="50%" style="stop-color:#1a3a52;stop-opacity:0.3" />
+          <stop offset="100%" style="stop-color:#1a3a52;stop-opacity:0.1" />
+        </linearGradient>
+      </defs>
+      <g stroke="url(#harmonicGrad1)" stroke-width="3" fill="none">
+        <path d="M 0 100 Q 300 50, 600 100 T 1200 100" />
+        <path d="M 0 150 Q 300 100, 600 150 T 1200 150" />
+        <path d="M 0 200 Q 300 150, 600 200 T 1200 200" />
+        <path d="M 0 250 Q 300 200, 600 250 T 1200 250" />
+        <path d="M 0 300 Q 300 250, 600 300 T 1200 300" />
+      </g>
+      <style>
+        @keyframes wave {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(1200px);
+          }
+        }
+        g {
+          animation: wave 8s linear infinite;
+        }
+      </style>
+    </svg>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-6 text-center relative z-10 space-y-8">
+    <div class="space-y-6">
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[#1a3a52]">
+        Ready to Transform Your Leadership?
+      </h2>
+      <p class="text-xl text-[#1a3a52]/80 leading-relaxed">
+        Get your personalized Octave Report within 24 hours. Discover your strengths, identify your growth areas, and receive a clear roadmap to move from chaos to cadence.
+      </p>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-6 justify-center pt-8">
+      <a href="#diagnostic-form" class="px-12 py-5 bg-[#1a3a52] hover:bg-[#0f1a27] text-[#d4af7d] font-bold rounded-lg transition-all duration-300 text-lg shadow-2xl transform hover:scale-105">
+        Begin Your Octave Journey
+      </a>
+      <a href="/founder" class="px-12 py-5 bg-transparent border-2 border-[#1a3a52] hover:bg-[#1a3a52] text-[#1a3a52] hover:text-[#d4af7d] font-bold rounded-lg transition-all duration-300 text-lg shadow-lg transform hover:scale-105">
+        Learn More About Joshua
+      </a>
+    </div>
+
+    <!-- Reassurance Copy -->
+    <div class="pt-8 border-t-2 border-[#1a3a52]/20">
+      <p class="text-[#1a3a52]/70 italic">
+        ✓ Your responses are confidential and secure. We never share your data.
+      </p>
+    </div>
+  </div>
+</section>

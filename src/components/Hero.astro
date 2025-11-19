@@ -3,7 +3,7 @@ interface Props {
   backgroundImage?: string;
 }
 
-const { backgroundImage = 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop' } = Astro.props;
+const { backgroundImage = 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&h=900&fit=crop' } = Astro.props;
 ---
 
 <section
@@ -33,7 +33,7 @@ const { backgroundImage = 'https://images.unsplash.com/photo-1552664730-d307ca88
       </h1>
 
       <!-- Description -->
-      <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed animate-slide-up" style="animation-delay: 0.1s">
+      <p class="text-xl md:text-2xl text-gray-100 mb-8 leading-relaxed animate-slide-up" style="animation-delay: 0.1s">
         LeadOctave helps leaders, teams, and organizations move from chaos to cadence through trust, clear systems, and sustainable leadership practices.
       </p>
 
@@ -49,12 +49,10 @@ const { backgroundImage = 'https://images.unsplash.com/photo-1552664730-d307ca88
       </div>
 
       <!-- Scroll indicator -->
-      <div class="absolute bottom-8 left-0 right-0 flex justify-center">
-        <div class="animate-bounce">
-          <svg class="w-6 h-6 text-[#d4af7d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
-        </div>
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+        <svg class="w-6 h-6 text-[#d4af7d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
       </div>
     </div>
   </div>

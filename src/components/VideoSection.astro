@@ -10,17 +10,32 @@ const {
 } = Astro.props;
 ---
 
-<section class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
+<section class="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+  <!-- Decorative background -->
+  <div class="absolute inset-0 opacity-5">
+    <svg class="w-full h-full" viewBox="0 0 1200 600">
+      <g stroke="#1a3a52" stroke-width="1" fill="none">
+        <circle cx="600" cy="300" r="300" />
+        <circle cx="600" cy="300" r="250" />
+        <circle cx="600" cy="300" r="200" />
+      </g>
+    </svg>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
     <!-- Heading -->
-    <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight text-black max-w-4xl mx-auto">
-        Achieving growth relies on taking straightforward & automated measures.
+    <div class="text-center mb-20">
+      <p class="text-[#d4af7d] text-sm font-semibold mb-4 tracking-widest uppercase">See It In Action</p>
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight text-[#1a3a52] max-w-4xl mx-auto">
+        Achieving Growth Through Structured Leadership
       </h2>
+      <p class="text-xl text-gray-700 mt-6 max-w-3xl mx-auto">
+        Watch how the Octave Model™ transforms organizational leadership and culture.
+      </p>
     </div>
 
     <!-- Video Container -->
-    <div class="relative group rounded-2xl overflow-hidden shadow-2xl h-96 md:h-[500px] lg:h-[600px]">
+    <div class="relative group rounded-3xl overflow-hidden shadow-2xl h-96 md:h-[500px] lg:h-[600px] border-2 border-[#d4af7d]/20 group-hover:border-[#d4af7d]/60 transition-all duration-300">
       <!-- Background Image -->
       <div
         class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
@@ -28,7 +43,7 @@ const {
       />
 
       <!-- Overlay -->
-      <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/50 group-hover:from-black/40 group-hover:to-black/60 transition-all duration-300"></div>
 
       <!-- Play Button -->
       <a
@@ -40,18 +55,18 @@ const {
         <!-- Play Icon Container -->
         <div class="relative">
           <!-- Outer Circle Animation -->
-          <div class="absolute inset-0 rounded-full bg-white/20 group-hover:bg-white/30 transition-all duration-300 scale-100 group-hover:scale-110 blur opacity-0 group-hover:opacity-100"></div>
+          <div class="absolute inset-0 rounded-full bg-[#d4af7d]/30 group-hover:bg-[#d4af7d]/50 transition-all duration-300 scale-100 group-hover:scale-110 blur opacity-0 group-hover:opacity-100"></div>
           
           <!-- Middle Circle -->
-          <div class="relative w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-110">
+          <div class="relative w-24 h-24 rounded-full bg-gradient-to-br from-[#d4af7d] to-[#c49d6f] flex items-center justify-center shadow-2xl group-hover:shadow-[0_0_60px_rgba(212,175,125,0.4)] transition-all duration-300 transform group-hover:scale-110">
             <!-- Inner Play Icon -->
-            <svg class="w-8 h-8 text-[#d4af7d] fill-current ml-1" viewBox="0 0 24 24">
+            <svg class="w-10 h-10 text-black fill-current ml-1" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z" />
             </svg>
           </div>
 
           <!-- Pulsing Ring Animation -->
-          <div class="absolute inset-0 rounded-full border-2 border-white opacity-0 group-hover:opacity-100 group-hover:animate-pulse"></div>
+          <div class="absolute inset-0 rounded-full border-3 border-[#d4af7d] opacity-0 group-hover:opacity-100 group-hover:animate-pulse"></div>
         </div>
       </a>
 
@@ -60,8 +75,8 @@ const {
     </div>
 
     <!-- Caption -->
-    <div class="text-center mt-8">
-      <p class="text-gray-600 text-sm font-medium">Click to watch our strategic approach in action</p>
+    <div class="text-center mt-12">
+      <p class="text-gray-700 text-base font-medium">Click to watch our strategic approach in action</p>
     </div>
   </div>
 </section>

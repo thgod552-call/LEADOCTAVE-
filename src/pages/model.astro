@@ -1,12 +1,90 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
+import ModelHero from '../components/ModelHero.astro';
+import OctavePillars from '../components/OctavePillars.astro';
+import ChaostoCadence from '../components/ChaostoCadence.astro';
 ---
 
-<Layout title="Model - LeadOctave">
+<Layout title="The Octave Model™ - LeadOctave">
   <Navigation />
-  <div class="pt-32 pb-20 max-w-7xl mx-auto px-6 min-h-screen">
-    <h1 class="text-5xl font-serif font-bold mb-8">Our Model</h1>
-    <p class="text-xl text-gray-300">Coming soon...</p>
-  </div>
+  <ModelHero />
+  <OctavePillars />
+  <ChaostoCadence />
+
+  <!-- Testimonials Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-[#d4af7d] text-sm font-semibold mb-4 tracking-widest uppercase">What Leaders Say</p>
+        <h2 class="text-5xl md:text-6xl font-serif font-bold text-black">
+          Results That Speak
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Testimonial 1 -->
+        <div class="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 hover:border-[#d4af7d] rounded-2xl p-8 transition-all duration-300 hover:shadow-lg hover:shadow-[#d4af7d]/10">
+          <div class="flex items-center gap-1 mb-4">
+            {[...Array(5)].map(() => (
+              <svg class="w-5 h-5 text-[#d4af7d]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-800 text-lg leading-relaxed mb-6 italic">
+            "The Octave Model™ transformed our leadership rhythm in just 6 weeks. Our team went from confused to completely aligned."
+          </p>
+          <div>
+            <p class="font-bold text-black">Sarah Chen</p>
+            <p class="text-sm text-gray-600">CEO, TechVenture Inc.</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 hover:border-[#d4af7d] rounded-2xl p-8 transition-all duration-300 hover:shadow-lg hover:shadow-[#d4af7d]/10">
+          <div class="flex items-center gap-1 mb-4">
+            {[...Array(5)].map(() => (
+              <svg class="w-5 h-5 text-[#d4af7d]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-800 text-lg leading-relaxed mb-6 italic">
+            "Teams finally operate in alignment. Execution is faster, decisions are clearer, and everyone knows their role. This is game-changing."
+          </p>
+          <div>
+            <p class="font-bold text-black">Marcus Williams</p>
+            <p class="text-sm text-gray-600">VP Operations, Growth Co.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA Section -->
+  <section class="py-24 bg-gradient-to-r from-[#d4af7d] to-[#c49d6f] relative overflow-hidden">
+    <!-- Animated background -->
+    <div class="absolute inset-0 opacity-10">
+      <svg class="w-full h-full" viewBox="0 0 1200 400">
+        <g stroke="#fff" stroke-width="2" fill="none">
+          <path d="M 0 200 Q 300 100, 600 200 T 1200 200" />
+          <path d="M 0 220 Q 300 120, 600 220 T 1200 220" />
+          <path d="M 0 180 Q 300 80, 600 180 T 1200 180" />
+        </g>
+      </svg>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-black mb-6">
+        Ready to Design Your Leadership System?
+      </h2>
+      <p class="text-lg md:text-xl text-black/70 mb-12 max-w-2xl mx-auto">
+        The Octave Model™ is proven to transform how leaders lead, how teams align, and how organizations scale sustainably.
+      </p>
+      <button class="px-10 py-4 bg-black hover:bg-black/90 text-[#d4af7d] font-bold rounded-lg transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+        Start Your Octave Journey
+      </button>
+    </div>
+  </section>
 </Layout>

@@ -1,0 +1,88 @@
+---
+---
+
+<section class="py-24 bg-gradient-to-r from-[#0f1a27] to-black relative overflow-hidden">
+  <!-- Decorative background -->
+  <div class="absolute inset-0 opacity-10">
+    <svg class="w-full h-full" viewBox="0 0 1200 600">
+      <g stroke="#d4af7d" stroke-width="2" fill="none">
+        <path d="M 0 300 Q 300 150, 600 300 T 1200 300" opacity="0.3" />
+        <path d="M 0 320 Q 300 170, 600 320 T 1200 320" opacity="0.2" />
+        <path d="M 0 280 Q 300 130, 600 280 T 1200 280" opacity="0.2" />
+      </g>
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-20">
+      <p class="text-[#d4af7d] text-sm font-semibold mb-4 tracking-widest uppercase">Speaking & Expertise</p>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-white mb-8">
+        Topics Joshua Speaks On
+      </h2>
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+        Keynotes and strategic conversations that move organizations from insight to measurable action.
+      </p>
+    </div>
+
+    <!-- Topics Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      {[
+        {
+          title: "Leadership System Design",
+          description: "Engineering repeatable frameworks that enable predictable leadership and scaled execution.",
+          icon: "⚙️"
+        },
+        {
+          title: "Team Alignment & Culture Development",
+          description: "Building synchronized teams where roles, accountability, and culture work in harmony.",
+          icon: "🤝"
+        },
+        {
+          title: "Leadership Training & Workshops",
+          description: "Practical frameworks from the Octave Model™ delivered with immediate application.",
+          icon: "📚"
+        },
+        {
+          title: "Organizational Rhythm & Cadence",
+          description: "Creating predictable processes and cadences that enable consistent high performance.",
+          icon: "🎵"
+        },
+        {
+          title: "Strategic Leadership for High-Performing Teams",
+          description: "Designing leadership systems that drive clarity, accountability, and sustainable results.",
+          icon: "🎯"
+        },
+        {
+          title: "From Chaos to Cadence",
+          description: "Transforming organizational culture from improvisation to structured, repeatable systems.",
+          icon: "✨"
+        }
+      ].map((topic) => (
+        <div class="group relative bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-gray-700 hover:border-[#d4af7d]/50 rounded-2xl p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-[#d4af7d]/10 transform hover:-translate-y-2 overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#d4af7d]/0 to-[#d4af7d]/0 group-hover:from-[#d4af7d]/10 group-hover:to-[#d4af7d]/5 transition-all duration-300"></div>
+
+          <div class="relative z-10">
+            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+              {topic.icon}
+            </div>
+            <h3 class="text-xl font-bold text-[#d4af7d] mb-3 group-hover:text-[#e0b890] transition-colors">
+              {topic.title}
+            </h3>
+            <p class="text-gray-300 leading-relaxed">
+              {topic.description}
+            </p>
+          </div>
+
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#d4af7d] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center">
+      <button class="px-10 py-4 bg-[#d4af7d] hover:bg-[#e0b890] text-black font-bold rounded-lg transition-all duration-300 text-lg shadow-lg hover:shadow-[#d4af7d]/50 transform hover:scale-105">
+        Invite Joshua to Speak
+      </button>
+    </div>
+  </div>
+</section>
