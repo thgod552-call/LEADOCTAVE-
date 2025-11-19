@@ -1,0 +1,135 @@
+---
+interface Benefit {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  highlightColor?: string;
+}
+
+const benefits: Benefit[] = [
+  {
+    id: '1',
+    title: 'Innovative Projects',
+    description: 'Be part of a team that tackles diverse and cutting-edge projects, from market expansion strategies to seamless technology integrations.',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop',
+    highlightColor: 'bg-black'
+  },
+  {
+    id: '2',
+    title: 'Professional Growth',
+    description: 'Experience continuous learning and skill development opportunities that will elevate your career to new heights.',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop',
+    highlightColor: 'bg-[#d4af7d]'
+  },
+  {
+    id: '3',
+    title: 'Collaborative Culture',
+    description: 'Join a team that values open communication, collaboration, and encourages each member to contribute their unique skills and perspectives.',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop',
+    highlightColor: 'bg-black'
+  }
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <p class="text-gray-500 text-sm font-semibold tracking-widest mb-4 uppercase">CAREER</p>
+      <h2 class="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-black leading-tight mb-4">
+        Join Our Dynamic Team<br />at LeadOctave
+      </h2>
+    </div>
+
+    <!-- Benefits Grid with Images -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+      <!-- First Benefit Card (Black) -->
+      <div class="group relative h-72 md:h-96 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+        <div class="absolute inset-0 bg-black rounded-xl p-8 flex flex-col justify-between z-10">
+          <div>
+            <h3 class="text-2xl md:text-3xl font-serif font-bold text-[#d4af7d] mb-4">
+              {benefits[0].title}
+            </h3>
+            <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+              {benefits[0].description}
+            </p>
+          </div>
+        </div>
+        <img
+          src={benefits[0].image}
+          alt={benefits[0].title}
+          class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-300"
+        />
+      </div>
+
+      <!-- Image Card 1 -->
+      <div class="h-72 md:h-96 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+        <img
+          src={benefits[0].image}
+          alt="Team working together"
+          class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+        />
+      </div>
+
+      <!-- Second Benefit Card (Green) -->
+      <div class="group relative h-72 md:h-96 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 md:col-span-2 lg:col-span-1 order-3 lg:order-none">
+        <div class="absolute inset-0 bg-[#d4af7d] rounded-xl p-8 flex flex-col justify-between z-10">
+          <h3 class="text-2xl md:text-3xl font-serif font-bold text-black mb-4">
+            {benefits[1].title}
+          </h3>
+        </div>
+        <img
+          src={benefits[1].image}
+          alt={benefits[1].title}
+          class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-300"
+        />
+      </div>
+
+      <!-- Image Card 2 -->
+      <div class="h-72 md:h-96 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 order-4 lg:order-none">
+        <img
+          src={benefits[1].image}
+          alt="Professional growth"
+          class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+        />
+      </div>
+
+      <!-- Third Benefit Card (Black) -->
+      <div class="group relative h-72 md:h-96 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 md:col-span-2 lg:col-span-1 order-5 lg:order-none">
+        <div class="absolute inset-0 bg-black rounded-xl p-8 flex flex-col justify-between z-10">
+          <div>
+            <h3 class="text-2xl md:text-3xl font-serif font-bold text-[#d4af7d] mb-4">
+              {benefits[2].title}
+            </h3>
+            <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+              {benefits[2].description}
+            </p>
+          </div>
+        </div>
+        <img
+          src={benefits[2].image}
+          alt={benefits[2].title}
+          class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-300"
+        />
+      </div>
+
+      <!-- Image Card 3 -->
+      <div class="h-72 md:h-96 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 order-2 md:order-6 lg:order-none">
+        <img
+          src={benefits[2].image}
+          alt="Collaborative culture"
+          class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+        />
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mt-16 text-center">
+      <p class="text-gray-600 text-lg mb-8">Ready to make an impact? Join our team and grow with LeadOctave.</p>
+      <button class="bg-[#d4af7d] hover:bg-[#c49d6f] text-black font-bold py-4 px-10 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#d4af7d]/50 transform hover:scale-105 text-lg">
+        Explore Opportunities
+      </button>
+    </div>
+  </div>
+</section>

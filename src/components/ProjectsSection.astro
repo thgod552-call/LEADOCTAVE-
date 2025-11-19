@@ -1,0 +1,113 @@
+---
+interface Project {
+  id: string;
+  number: string;
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+}
+
+const projects: Project[] = [
+  {
+    id: '01',
+    number: '01',
+    title: 'MarketNavigator Strategy',
+    description: 'Dive into our portfolio of successful collaborations, where innovation meets implementation. Explore the diverse range of projects we\'ve undertaken, each a testament to our strategic thinking, meticulous planning, and dedication to delivering tangible results.',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop',
+    link: '#'
+  },
+  {
+    id: '02',
+    number: '02',
+    title: 'Digital Landscape',
+    description: 'Dive into our portfolio of successful collaborations, where innovation meets implementation. Explore the diverse range of projects we\'ve undertaken, each a testament to our strategic thinking, meticulous planning, and dedication to delivering tangible results.',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop',
+    link: '#'
+  },
+  {
+    id: '03',
+    number: '03',
+    title: 'Sailing the Digital Seas',
+    description: 'Dive into our portfolio of successful collaborations, where innovation meets implementation. Explore the diverse range of projects we\'ve undertaken, each a testament to our strategic thinking, meticulous planning, and dedication to delivering tangible results.',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop',
+    link: '#'
+  }
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Testimonial/Quote Section -->
+    <div class="mb-20 text-center">
+      <div class="flex items-center justify-center gap-4 mb-8">
+        <span class="text-6xl font-bold text-[#d4af7d]">"</span>
+        <h2 class="text-4xl md:text-5xl font-serif font-bold text-black leading-tight">
+          We don't just navigate business complexities: we architect transformative solutions. Our commitment goes beyond consultancy
+        </h2>
+        <span class="text-6xl font-bold text-[#d4af7d]">"</span>
+      </div>
+    </div>
+
+    <!-- Our Project Section -->
+    <div>
+      <!-- Header -->
+      <div class="mb-16">
+        <h3 class="text-6xl md:text-7xl font-serif font-bold text-black mb-8">
+          Our Project
+        </h3>
+        <p class="text-gray-600 text-lg max-w-3xl">
+          Dive into our portfolio of successful collaborations, where innovation meets implementation. Explore the diverse range of projects we've undertaken, each a testament to our strategic thinking, meticulous planning, and dedication to delivering tangible results.
+        </p>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="space-y-12">
+        {projects.map((project, index) => (
+          <div class={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center group ${index % 2 !== 0 ? 'lg:grid-flow-dense' : ''}`}>
+            <!-- Project Content -->
+            <div class={index % 2 !== 0 ? 'lg:col-start-2' : ''}>
+              <!-- Project Number -->
+              <div class="mb-6">
+                <span class="text-7xl font-serif font-bold text-black/10 group-hover:text-[#d4af7d]/20 transition-colors duration-300">
+                  {project.number}
+                </span>
+              </div>
+
+              <!-- Project Title -->
+              <h4 class="text-3xl md:text-4xl font-serif font-bold text-black mb-6 group-hover:text-[#d4af7d] transition-colors duration-300">
+                {project.title}
+              </h4>
+
+              <!-- Project Description -->
+              <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                {project.description}
+              </p>
+
+              <!-- View Project Link -->
+              <a
+                href={project.link}
+                class="inline-flex items-center gap-2 text-[#d4af7d] font-semibold hover:text-[#c49d6f] transition-colors duration-300 group/link"
+              >
+                <span>View project</span>
+                <svg class="w-5 h-5 transform group-hover/link:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Project Image -->
+            <div class={`relative overflow-hidden rounded-lg shadow-lg h-80 ${index % 2 !== 0 ? 'lg:col-start-1' : ''}`}>
+              <img
+                src={project.image}
+                alt={project.title}
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

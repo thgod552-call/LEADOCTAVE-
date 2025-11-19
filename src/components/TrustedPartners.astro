@@ -1,0 +1,49 @@
+---
+interface Brand {
+  name: string;
+  logo: string;
+}
+
+const brands: Brand[] = [
+  { name: 'LOBO', logo: 'https://via.placeholder.com/120/1a1a1a/666666?text=LOBO' },
+  { name: 'Logoipsum 1', logo: 'https://via.placeholder.com/120/1a1a1a/666666?text=Logoipsum' },
+  { name: 'Logoipsum 2', logo: 'https://via.placeholder.com/120/1a1a1a/666666?text=Logoipsum' },
+  { name: 'Logoipsum 3', logo: 'https://via.placeholder.com/120/1a1a1a/666666?text=Logoipsum' },
+];
+---
+
+<section class="py-20 bg-gradient-to-b from-gray-900 to-black">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Section -->
+      <div class="bg-gradient-to-br from-[#0f1a27] to-gray-900 p-12 rounded-2xl border border-[#d4af7d]/20 hover:border-[#d4af7d]/40 transition-all duration-300">
+        <p class="text-[#d4af7d] text-sm font-semibold tracking-widest mb-6">OUR TRUSTED PARTNER</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-bold leading-tight text-white">
+          The Brands We Work With And Believe In us
+        </h2>
+      </div>
+
+      <!-- Right Section - Brands Grid -->
+      <div class="grid grid-cols-2 gap-8">
+        {
+          brands.map((brand, index) => (
+            <div class="group relative flex items-center justify-center p-6 bg-gray-800/50 rounded-xl hover:bg-gray-700/70 transition-all duration-300 border border-gray-700/50 hover:border-[#d4af7d]/30 cursor-pointer transform hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-br from-[#d4af7d]/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <img
+                src={brand.logo}
+                alt={brand.name}
+                class="h-12 object-contain filter grayscale opacity-70 group-hover:opacity-100 transition-opacity duration-300 relative z-10"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    box-shadow: 0 -4px 30px rgba(212, 175, 125, 0.05);
+  }
+</style>

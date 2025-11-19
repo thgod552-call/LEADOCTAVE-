@@ -1,0 +1,82 @@
+---
+interface Service {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const services: Service[] = [
+  {
+    icon: 'ℹ️',
+    title: 'Strategic Consulting',
+    description: 'Embark on a transformative journey with our strategic consulting services, where we specialize in guiding businesses through the intricacies of todays dynamic landscape. Our expert consultants leverage deep industry insights and proven methodologies, strategically aligning your business with sustainable growth trajectories. By diving deep into the complexities unique to your industry.'
+  },
+  {
+    icon: '📊',
+    title: 'Market Research',
+    description: 'In an era where information is power, staying at the forefront of your industry requires more than just knowledge - it demands strategic foresight. Our in-depth market research services are crafted to propel your business forward by decoding market dynamics, trends, and emerging opportunities. By harnessing comprehensive data analytics.'
+  },
+  {
+    icon: '💼',
+    title: 'Business Process',
+    description: 'Unlock the full potential of your operations with our business process optimization expertise, designed to transcend conventional efficiency standards. We believe in reimagining the DNA of operational excellence, distributing team specialties in marketing, streamlining, and optimizing your business processes.'
+  },
+  {
+    icon: '🔄',
+    title: 'Digital Transformation',
+    description: 'In a rapidly evolving digital landscape, the ability to embrace change is synonymous with future success. Our digital transformation services are crafted to propel you towards tomorrows opportunities. From AI-driven solutions to IoT implementations, we orchestrate a digital revolution.'
+  }
+];
+---
+
+<section class="py-20 bg-black relative overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="grid grid-cols-4 md:grid-cols-8 gap-4">
+      {Array.from({ length: 32 }).map(() => (
+        <div class="w-16 h-16 bg-gray-600 rounded opacity-30"></div>
+      ))}
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <!-- Header -->
+    <div class="mb-16">
+      <p class="text-[#d4af7d] text-sm font-semibold tracking-widest mb-4">SERVICES</p>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold leading-tight text-white mb-8 max-w-2xl">
+        Discover a range of services designed to empower your business
+      </h2>
+      <button class="bg-[#d4af7d] hover:bg-[#c49d6f] text-black font-bold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#d4af7d]/50 transform hover:scale-105">
+        Book a service
+      </button>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {services.map((service) => (
+        <div class="group relative bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 hover:border-[#d4af7d]/50 rounded-xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-[#d4af7d]/10 transform hover:-translate-y-2">
+          <!-- Gradient overlay on hover -->
+          <div class="absolute inset-0 bg-gradient-to-br from-[#d4af7d]/0 to-[#d4af7d]/0 group-hover:from-[#d4af7d]/5 group-hover:to-[#d4af7d]/10 rounded-xl transition-all duration-300"></div>
+
+          <!-- Icon -->
+          <div class="relative z-10 mb-6 flex items-center justify-center w-12 h-12 rounded-lg bg-gray-800 border border-[#d4af7d]/30 group-hover:bg-[#d4af7d]/20 group-hover:border-[#d4af7d]/60 transition-all duration-300">
+            <span class="text-xl">{service.icon}</span>
+          </div>
+
+          <!-- Content -->
+          <div class="relative z-10">
+            <h3 class="text-xl font-serif font-bold text-white mb-4 group-hover:text-[#d4af7d] transition-colors">
+              {service.title}
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
+              {service.description}
+            </p>
+          </div>
+
+          <!-- Bottom accent line -->
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#d4af7d] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-xl"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

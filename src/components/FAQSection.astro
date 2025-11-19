@@ -1,0 +1,86 @@
+---
+interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+}
+
+const faqs: FAQItem[] = [
+  {
+    id: '1',
+    question: 'What is LeadOctave Consultancy\'s mission?',
+    answer: 'LeadOctave Consultancy is dedicated to [insert mission statement], striving to make a positive impact in the lives of individuals and communities through various philanthropic initiatives.'
+  },
+  {
+    id: '2',
+    question: 'How can I contribute to LeadOctave Consultancy?',
+    answer: 'There are many ways to support our mission. You can make financial donations, volunteer your time and expertise, or partner with us on specific projects. Visit our contribution page to learn more about available opportunities.'
+  },
+  {
+    id: '3',
+    question: 'Where does my donation go?',
+    answer: 'All donations are carefully allocated to support our core programs and initiatives. We maintain transparency in our financial reporting and ensure that funds are used efficiently to maximize impact.'
+  },
+  {
+    id: '4',
+    question: 'How can I get involved as a volunteer?',
+    answer: 'We welcome volunteers from all backgrounds. You can explore volunteer opportunities through our dedicated volunteer portal or contact our team directly to discuss how your skills can contribute to our mission.'
+  },
+  {
+    id: '5',
+    question: 'Can I sponsor a specific project or program?',
+    answer: 'Yes! We offer sponsorship opportunities for specific projects and programs. Contact our sponsorship team to learn about available programs and how you can make a direct impact.'
+  }
+];
+---
+
+<section class="py-20 bg-black relative overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="grid grid-cols-4 md:grid-cols-8 gap-4">
+      {Array.from({ length: 32 }).map(() => (
+        <div class="w-16 h-16 bg-gray-600 rounded opacity-30"></div>
+      ))}
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <!-- Left Section -->
+      <div>
+        <p class="text-[#d4af7d] text-sm font-semibold tracking-widest mb-4 uppercase">FAQ</p>
+        <h2 class="text-5xl md:text-6xl font-serif font-bold text-white leading-tight mb-8">
+          Questions your might love to ask, we have answered
+        </h2>
+        <p class="text-gray-300 text-lg leading-relaxed">
+          Delve into the Details with Our Frequently Asked Questions Section – Your Comprehensive Guide to Understanding LeadOctave Mission, Contributions, and Ways to Get Involved.
+        </p>
+      </div>
+
+      <!-- Right Section - FAQs -->
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <details
+            class="group border-b border-[#d4af7d]/20 pb-4 cursor-pointer hover:border-[#d4af7d]/40 transition-colors duration-300"
+            open={index === 0}
+          >
+            <summary class="flex items-center justify-between py-4 text-[#d4af7d] font-semibold text-base md:text-lg hover:text-[#e0b890] transition-colors duration-300">
+              {faq.question}
+              <svg
+                class="w-5 h-5 transform transition-transform duration-300 group-open:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+              </svg>
+            </summary>
+            <div class="text-gray-300 text-base leading-relaxed pt-4 pb-2">
+              {faq.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

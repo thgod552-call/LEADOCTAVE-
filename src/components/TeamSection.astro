@@ -1,0 +1,97 @@
+---
+interface TeamMember {
+  name: string;
+  title: string;
+  image: string;
+}
+
+const teamMembers: TeamMember[] = [
+  {
+    name: 'Oliver Bennett',
+    title: 'Founder & CEO',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop'
+  },
+  {
+    name: 'Ava Thompson',
+    title: 'Senior Strategic Consultant',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop'
+  },
+  {
+    name: 'Ethan Rodriguez',
+    title: 'Automation Specialist',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop'
+  },
+  {
+    name: 'Mia Reynolds',
+    title: 'Client Relationship Manager',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop'
+  },
+  {
+    name: 'Marcus Mitchell',
+    title: 'Project Manager',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop'
+  },
+  {
+    name: 'Isabella Chang',
+    title: 'Data Analytics',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop'
+  }
+];
+---
+
+<section class="py-20 bg-black relative overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="grid grid-cols-4 md:grid-cols-8 gap-4">
+      {Array.from({ length: 32 }).map(() => (
+        <div class="w-16 h-16 bg-gray-600 rounded opacity-30"></div>
+      ))}
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <p class="text-[#d4af7d] text-sm font-semibold tracking-widest mb-4 uppercase">OUR TEAM</p>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-white mb-4">
+        We have a dynamic and seasoned team
+      </h2>
+      <p class="text-2xl md:text-3xl font-serif text-[#d4af7d] italic">
+        Top people at each industry
+      </p>
+    </div>
+
+    <!-- Team Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {teamMembers.map((member) => (
+        <div class="group relative overflow-hidden rounded-lg">
+          <!-- Team Member Image -->
+          <div class="relative h-96 overflow-hidden rounded-lg">
+            <img
+              src={member.image}
+              alt={member.name}
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60 group-hover:from-black/30 group-hover:to-black/70 transition-all duration-300"></div>
+          </div>
+
+          <!-- Team Member Info -->
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-center">
+            <!-- Name -->
+            <h3 class="text-xl md:text-2xl font-serif font-bold text-white mb-2 group-hover:text-[#d4af7d] transition-colors duration-300">
+              {member.name}
+            </h3>
+            <!-- Title -->
+            <p class="text-sm md:text-base text-[#d4af7d] group-hover:text-[#e0b890] transition-colors duration-300">
+              {member.title}
+            </p>
+          </div>
+
+          <!-- Hover Accent -->
+          <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#d4af7d] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

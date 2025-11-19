@@ -1,0 +1,91 @@
+---
+interface Props {
+  backgroundImage?: string;
+}
+
+const { backgroundImage = 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop' } = Astro.props;
+---
+
+<section
+  class="relative w-full h-screen flex items-center justify-start pt-20 overflow-hidden group"
+  style={`background-image: url('${backgroundImage}'); background-size: cover; background-position: center;`}
+>
+  <!-- Overlay with gradient -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+
+  <!-- Animated background elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-20 right-20 w-72 h-72 bg-[#d4af7d]/5 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-20 left-20 w-96 h-96 bg-[#d4af7d]/5 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+    <div class="max-w-2xl">
+      <!-- Subtitle with animation -->
+      <p class="text-[#d4af7d] text-sm font-semibold mb-4 tracking-widest animate-fade-in">
+        Leadership Excellence
+      </p>
+
+      <!-- Main Heading -->
+      <h1 class="text-6xl md:text-7xl font-serif font-bold leading-tight mb-8 text-white animate-slide-up">
+        Build Leadership That Lasts Beyond You
+      </h1>
+
+      <!-- Description -->
+      <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed animate-slide-up" style="animation-delay: 0.1s">
+        LeadOctave helps leaders, teams, and organizations move from chaos to cadence through trust, clear systems, and sustainable leadership practices.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex gap-4 animate-slide-up" style="animation-delay: 0.2s">
+        <button class="group/btn relative bg-gradient-to-r from-[#d4af7d] to-[#c49d6f] hover:from-[#c49d6f] hover:to-[#b48a5f] text-black font-bold py-4 px-8 rounded-lg transition-all duration-300 text-lg shadow-lg hover:shadow-[#d4af7d]/50 hover:shadow-2xl transform hover:scale-105">
+          <span class="relative z-10">Get Your Octave Score</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-[#e0b890] to-[#d4af7d] rounded-lg opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 blur"></div>
+        </button>
+        <button class="border-2 border-[#d4af7d] hover:border-[#e0b890] text-[#d4af7d] font-bold py-4 px-8 rounded-lg transition-all duration-300 hover:bg-[#d4af7d]/10 transform hover:scale-105">
+          Explore the LeadOctave Framework
+        </button>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-0 right-0 flex justify-center">
+        <div class="animate-bounce">
+          <svg class="w-6 h-6 text-[#d4af7d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out 0.2s both;
+  }
+</style>

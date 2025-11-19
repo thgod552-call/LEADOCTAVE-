@@ -1,0 +1,111 @@
+---
+interface NavLink {
+  label: string;
+  href: string;
+}
+
+const links: NavLink[] = [
+  { label: 'Home', href: '/' },
+  { label: 'Service', href: '/service' },
+  { label: 'Model', href: '/model' },
+  { label: 'Founder', href: '/founder' },
+  { label: 'About', href: '/about' },
+];
+---
+
+<nav class="fixed top-0 w-full bg-gradient-to-b from-[#0f1a27]/95 to-[#0f1a27]/80 backdrop-blur-lg z-50 border-b border-[#d4af7d]/10 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center space-x-2 font-bold text-xl hover:text-[#d4af7d] transition-colors group z-50">
+      <div class="w-8 h-8 rounded-full border-2 border-[#d4af7d] flex items-center justify-center group-hover:bg-[#d4af7d]/10 transition-colors">
+        <div class="w-4 h-4 rounded-full border border-[#d4af7d]"></div>
+      </div>
+      <span class="bg-gradient-to-r from-white to-[#d4af7d] bg-clip-text text-transparent">LeadOctave</span>
+    </a>
+
+    <!-- Navigation Links - Desktop -->
+    <div class="hidden md:flex items-center space-x-8">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm font-medium text-gray-300 hover:text-[#d4af7d] transition-all duration-300 relative group"
+          >
+            {link.label}
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#d4af7d] to-[#c49d6f] group-hover:w-full transition-all duration-300"></span>
+          </a>
+        ))
+      }
+    </div>
+
+    <!-- Hamburger Menu - Mobile -->
+    <button id="hamburger" class="md:hidden flex flex-col gap-1.5 cursor-pointer z-50 relative">
+      <span class="hamburger-line w-6 h-0.5 bg-white rounded transition-all duration-300"></span>
+      <span class="hamburger-line w-6 h-0.5 bg-white rounded transition-all duration-300"></span>
+      <span class="hamburger-line w-6 h-0.5 bg-white rounded transition-all duration-300"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden fixed inset-0 top-20 bg-[#0f1a27]/95 backdrop-blur-lg border-t border-[#d4af7d]/10 z-40">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col space-y-6">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="text-lg font-medium text-gray-300 hover:text-[#d4af7d] transition-colors py-2 border-b border-gray-800/50 hover:border-[#d4af7d]/30"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</nav>
+
+<style>
+  nav {
+    box-shadow: 0 4px 30px rgba(212, 175, 125, 0.1);
+  }
+
+  #hamburger.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  #hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  #hamburger.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+</style>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when a link is clicked
+    const links = mobileMenu.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  }
+</script>
