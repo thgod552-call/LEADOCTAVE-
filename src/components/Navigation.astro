@@ -14,14 +14,12 @@ const links: NavLink[] = [
 ];
 ---
 
-<nav class="fixed top-0 w-full bg-gradient-to-b from-[#0f1a27] via-[#0f1a27]/95 to-[#0f1a27]/90 z-50 shadow-2xl backdrop-blur-lg border-b border-[#d4af7d]/20" style="box-shadow: 0 8px 32px rgba(212, 175, 125, 0.15);">
+<nav class="fixed top-0 w-full bg-gradient-to-b from-[#0f1a27] via-[#0f1a27]/95 to-[#0f1a27]/90 z-50 shadow-2xl backdrop-blur-lg border-b border-[#d4af7d]/20">
   <div class="max-w-7xl mx-auto px-6 py-3.5 flex items-center justify-between">
     <!-- Logo -->
     <a href="/" class="flex items-center space-x-2.5 z-50 group no-underline hover:opacity-90 transition-opacity duration-300">
       <div class="relative w-10 h-10 flex items-center justify-center bg-gradient-to-br from-[#d4af7d] to-[#c49d6f] rounded-full shadow-lg group-hover:shadow-[#d4af7d]/50 transition-all duration-300">
-        <!-- Outer circle -->
         <div class="absolute inset-1 rounded-full border-2 border-white/30 group-hover:border-white/60 transition-all duration-300"></div>
-        <!-- Inner octave-inspired design -->
         <div class="relative w-6 h-6">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
             <circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5" opacity="0.8"/>
@@ -60,17 +58,17 @@ const links: NavLink[] = [
       </a>
 
       <!-- Hamburger Menu - Mobile -->
-      <button id="hamburger" class="md:hidden flex flex-col gap-1.5 cursor-pointer z-50 relative p-2">
-        <span class="hamburger-line w-5 h-0.5 bg-[#d4af7d] rounded-full transition-all duration-300"></span>
-        <span class="hamburger-line w-5 h-0.5 bg-[#d4af7d] rounded-full transition-all duration-300"></span>
-        <span class="hamburger-line w-5 h-0.5 bg-[#d4af7d] rounded-full transition-all duration-300"></span>
+      <button id="nav-toggle" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 cursor-pointer relative z-50 p-2 rounded-lg hover:bg-[#d4af7d]/10 transition-colors">
+        <span class="nav-bar w-5 h-0.5 bg-[#d4af7d] rounded-full transition-all duration-300"></span>
+        <span class="nav-bar w-5 h-0.5 bg-[#d4af7d] rounded-full transition-all duration-300"></span>
+        <span class="nav-bar w-5 h-0.5 bg-[#d4af7d] rounded-full transition-all duration-300"></span>
       </button>
     </div>
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden fixed inset-0 top-[68px] bg-gradient-to-b from-[#0f1a27] to-[#0f1a27]/95 backdrop-blur-lg border-t border-[#d4af7d]/10 z-40 overflow-y-auto">
-    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col space-y-2">
+  <div id="nav-menu" class="hidden md:hidden fixed left-0 right-0 top-[60px] bg-gradient-to-b from-[#0f1a27] to-[#0f1a27]/95 border-b border-[#d4af7d]/10 z-40 shadow-lg">
+    <div class="px-6 py-8 space-y-2 flex flex-col">
       {
         links.map((link) => (
           <a
@@ -95,65 +93,71 @@ const links: NavLink[] = [
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
 
-  #hamburger.active .hamburger-line:nth-child(1) {
-    transform: rotate(45deg) translate(10px, 10px);
-    background-color: #d4af7d;
+  #nav-toggle.open .nav-bar:nth-child(1) {
+    transform: rotate(45deg) translate(9px, 9px);
   }
 
-  #hamburger.active .hamburger-line:nth-child(2) {
+  #nav-toggle.open .nav-bar:nth-child(2) {
     opacity: 0;
-    transform: translateX(-10px);
   }
 
-  #hamburger.active .hamburger-line:nth-child(3) {
-    transform: rotate(-45deg) translate(8px, -8px);
-    background-color: #d4af7d;
+  #nav-toggle.open .nav-bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
   }
 
-  .hamburger-line {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  .nav-bar {
+    display: block;
   }
 </style>
 
 <script>
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
+  function initNav() {
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = navMenu?.querySelectorAll('a');
 
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('hidden');
-    });
+    if (navToggle && navMenu) {
+      // Toggle menu
+      navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navToggle.classList.toggle('open');
+        navMenu.classList.toggle('hidden');
+      });
 
-    // Close menu when a link is clicked
-    const links = mobileMenu.querySelectorAll('a, button');
-    links.forEach(link => {
-      link.addEventListener('click', (e) => {
-        if (link.tagName === 'A') {
-          hamburger.classList.remove('active');
-          mobileMenu.classList.add('hidden');
+      // Close menu when clicking links
+      navLinks?.forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('open');
+          navMenu.classList.add('hidden');
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+          if (!navMenu.classList.contains('hidden')) {
+            navToggle.classList.remove('open');
+            navMenu.classList.add('hidden');
+          }
         }
       });
-    });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      const isClickInsideMenu = mobileMenu.contains(e.target);
-      const isClickOnHamburger = hamburger.contains(e.target);
-      
-      if (!isClickInsideMenu && !isClickOnHamburger && !hamburger.classList.contains('hidden')) {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.add('hidden');
-      }
-    });
-
-    // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.add('hidden');
-      }
-    });
+      // Close menu on escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          navToggle.classList.remove('open');
+          navMenu.classList.add('hidden');
+        }
+      });
+    }
   }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNav);
+  } else {
+    initNav();
+  }
+
+  // Re-init on page transitions (for client-side routing)
+  document.addEventListener('astro:page-load', initNav);
 </script>
