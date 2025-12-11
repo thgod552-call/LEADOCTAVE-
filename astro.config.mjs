@@ -9,6 +9,18 @@ export default defineConfig({
   integrations: [react()],
 
   vite: {
-    plugins: [tailwindcss()]
-  }
+    plugins: [tailwindcss()],
+    build: {
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+        }
+      }
+    }
+  },
+
+  // Enable compression and optimization
+  output: 'static',
+  compressHTML: true,
 });
