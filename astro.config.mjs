@@ -1,24 +1,29 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
-
 import react from '@astrojs/react';
 
-// https://astro.build/config
 export default defineConfig({
   integrations: [react()],
-
+  site: 'http://localhost:3000',
+  image: {
+    domains: ['images.unsplash.com', 'via.placeholder.com'],
+    remotePattern: {
+      protocol: 'https'
+    }
+  },
   vite: {
     build: {
       minify: 'terser',
-      terserOptions: {
-        compress: {
-          drop_console: true,
+      cssMinify: true,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'react-vendor': ['react', 'react-dom']
+          }
         }
       }
+    },
+    ssr: {
+      noExternal: ['@astrojs/react']
     }
-  },
-
-  // Enable compression and optimization
-  output: 'static',
-  compressHTML: true,
+  }
 });

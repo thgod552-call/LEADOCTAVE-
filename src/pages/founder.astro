@@ -1,47 +1,27 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import FounderHero from '../components/FounderHero.astro';
-import FounderStory from '../components/FounderStory.astro';
-import FounderExpertise from '../components/FounderExpertise.astro';
-import FounderPress from '../components/FounderPress.astro';
+import ServiceNav from "../components/ServiceNav.jsx";
+import FounderPage from "../components/FounderPage.jsx";
+import Footer from "../components/Footer.jsx";
+import FloatingElements from "../components/FloatingElements.jsx";
+import "../styles/global.css";
 ---
 
-<Layout title="Founder - LeadOctave | Joshua Tolofari">
-  <Navigation />
-  <FounderHero />
-  <FounderStory />
-  <FounderExpertise />
-  <FounderPress />
-
-  <!-- Closing CTA Section -->
-  <section class="py-24 bg-gradient-to-r from-[#d4af7d] via-[#e0b890] to-[#d4af7d] relative overflow-hidden">
-    <!-- Decorative background -->
-    <div class="absolute inset-0 opacity-10">
-      <svg class="w-full h-full" viewBox="0 0 1200 600">
-        <g stroke="#1a3a52" stroke-width="2" fill="none">
-          <path d="M 0 300 Q 300 150, 600 300 T 1200 300" opacity="0.3" />
-          <path d="M 0 320 Q 300 170, 600 320 T 1200 320" opacity="0.2" />
-          <path d="M 0 280 Q 300 130, 600 280 T 1200 280" opacity="0.2" />
-        </g>
-      </svg>
-    </div>
-
-    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[#1a3a52] mb-6">
-        Ready to Move From Chaos to Cadence?
-      </h2>
-      <p class="text-xl text-[#1a3a52]/80 mb-12 leading-relaxed">
-        Whether you need strategic leadership guidance, organizational system design, or keynote speaking, Joshua brings proven frameworks and deep expertise to unlock sustainable high performance.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-6 justify-center">
-        <button class="px-10 py-4 bg-[#1a3a52] hover:bg-[#0f1a27] text-[#d4af7d] font-bold rounded-lg transition-all duration-300 text-lg shadow-xl transform hover:scale-105">
-          Book a Clarity Session
-        </button>
-        <button class="px-10 py-4 bg-transparent border-2 border-[#1a3a52] hover:bg-[#1a3a52] text-[#1a3a52] hover:text-[#d4af7d] font-bold rounded-lg transition-all duration-300 text-lg shadow-lg transform hover:scale-105">
-          Invite Joshua to Speak
-        </button>
-      </div>
-    </div>
-  </section>
-</Layout>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Meet Joshua Tolofari | LeadOctave Founder</title>
+        <meta
+            name="description"
+            content="Joshua Tolofari helps leaders move from chaos to cadence through structures of trust, clarity, and sustainable execution."
+        />
+        <link rel="icon" type="image/png" href="/image/leadoctave-logo.png" />
+    </head>
+    <body class="antialiased">
+        <FloatingElements client:load />
+        <ServiceNav client:load />
+        <FounderPage client:load />
+        <Footer client:load />
+    </body>
+</html>
